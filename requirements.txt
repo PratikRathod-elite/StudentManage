@@ -22,7 +22,6 @@ pylint==2.7.4
 pypiwin32==223
 pyttsx==1.1
 pytz==2021.1
-pywin32==300
 requests==2.25.1
 six==1.16.0
 sqlparse==0.4.1
