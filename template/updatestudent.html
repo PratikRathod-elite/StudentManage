@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: aliceblue;
+            font-family: arial;
+            height: 200vh;
+        }
+        table{
+            border:2px solid black;
+            padding:15px 25px;
+            margin: 0 auto;
+            box-shadow: 0px 10px 50px 1px black;
+            background-color: rgb(0, 0, 0);
+            width: 100%;
+            
+        }
+        a{
+            text-decoration: none;
+        }
+        table tr th{
+            background-color: rgba(0, 255, 34, 0.815);
+            padding:15px 25px;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            
+        }
+        table tr td{
+            padding:15px 25px;
+            font-size: 18px;
+            color: aliceblue;
+        }
+
+        table #tr:nth-child(even){
+            background-color: rgba(255, 112, 231, 0.699);
+        }
+        table #tr:nth-child(odd){
+            background-color: rgba(0, 255, 255, 0.705);
+        }
+        table .name{
+            width:300px;
+        }
+        table .id{
+            width:30px;
+            text-align: center;
+        }
+        table .upd , .del{
+            width:50px;
+            text-align: center;
+            
+        }
+        table .upd button {
+            background-color: rgb(45, 110, 252);
+            padding:5px 15px;
+            font-size: 15px;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            opacity: 0.9;
+
+        }
+        table .del button {
+            background-color: rgb(253, 47, 47);
+            padding:5px 15px;
+            font-size: 15px;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+        table .del button:hover ,table .upd button:hover{
+            opacity: 1;
+        } 
+        .alert {
+            position: fixed;
+            background-color: rgb(217, 235, 247);
+            max-width: 300px;
+            font-size: 15px;
+            text-align: center;
+            padding:30px;
+            top: 35%;
+            left: 38%;
+            box-shadow: 5px 5px 25px 5px rgba(0, 0, 0, 0.466);
+            display: none;
+            transition:0;
+            transition:.25s ease;
+            border-radius: 2px;
+        }
+        .alert button{
+            width:70px;
+            padding: 2%;
+            margin:15px;
+            border: none;
+            border-radius: 3px;
+            background-color: rgb(0, 183, 255);
+            transform: scale(1.1);
+            transition:.25s ease;
+            font-size: 15;
+            color: white;
+            text-transform: uppercase;
+        }
+        .alert button:hover{
+            background-color: rgb(47, 144, 255);
+            transition:.25s ease;
+        }
+        .alert #sub{
+            width:70px;
+            padding: 2%;
+            margin:15px;
+            border: none;
+            border-radius: 3px;
+            background-color: rgb(255, 0, 13);
+            transform: scale(1.1);
+            transition:.25s ease;
+            font-size: 15;
+            color: white;
+        }
+
+
+        
+    </style>
+
+    <h1>Update</h1>
+    <a href="/"><h2><<-Home</h2></a>
+    <a href="addstudent"><h2>Add Student</h2></a>
+    <a href="displaystudent"><h2>Display</h2></a>
+    <a href="updstd"><h2>UPD</h2></a>
+    
+    </div>
+        
+        <table>
+            <tr>
+                <th class="id">ID</th>
+                <th class="name">NAME</th>
+                <th class="upd">UPDATE</th>
+                <th class="del">DELETE</th>
+            </tr>
+            {% for card in cards %}
+            <tr id="tr">
+                
+                <td class="id">{{card.id}}</td>
+                <td class="name">{{card.name}}</td>
+                <td class="upd"><a href=""><button >Update</button></a></td>
+                <td class="del"><button onclick="delet()">Delete</button></td>
+            </tr>
+            {% endfor %}
+            <div class="alert" id="alert">
+                <h2>Type ID of student to confirm deletion.</h2>
+                <div class="form">
+                    <form acction="updatestudent" method="POST">
+                        {%csrf_token%}
+                        <input type="text" placeholder="Enter ID" name="id"><br><br>
+                        <input id="sub" type="Submit" value="DELETE"><br>
+                    </form><button onclick="no()">Cancel</button>
+            </div>
+            
+            
+        </table>
+
+            
+</body>
+<script>
+    function delet(){
+        document.getElementById("alert").style.display="initial";
+        
+    }
+    function no(){
+        document.getElementById("alert").style.display="none";
+    }
+
+</script>
+</html>

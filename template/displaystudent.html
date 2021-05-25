@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color:rgb(184, 252, 252);
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background-color: rgb(181, 214, 243);
+            grid-gap: 40px;
+            padding: 40px;
+        }
+        .profile-card{
+            background:linear-gradient(45deg,rgba(19, 79, 247, 0.795),rgba(105, 67, 245, 0.87),rgb(189, 90, 235),rgb(105, 208, 248));
+            padding: 20px;
+            border-radius: 23px;
+            box-shadow: 5px 5px 30px 5px black ;
+            
+        }
+        .profile-card h1{
+            font-size: 20px;
+            color:lavender;
+            font-family:sans-serif;
+        }
+    </style>
+    <h1>Display</h1>
+    <a href="/"><h2><<-Home</h2></a>
+    <a href="addstudent"><h2>Add Student</h2></a>
+    
+    <a href="updatestudent"><h2>Update</h2></a>
+    <div class="grid">
+        {% for card in cards %}
+        <div class="profile-card">
+
+            <h1>Name: {{card.name}}</h1>
+            <h1>Roll No. {{card.roll}}</h1>
+            <h1>Gender: {{card.Gender}}</h1>
+            <h1>Division: {{card.division}}</h1>
+            <h1>Year: {{card.year}}</h1>
+            <h1>Branch: {{card.branch}}</h1>
+            <h1>DOB: {{card.dob}}</h1>
+            <h1>PRN: {{card.prn}}</h1>
+            <h1>Email: {{card.email}}</h1>
+            <h1>Contact: {{card.contact}}</h1>
+            <h1>Address: {{card.address}}</h1>
+
+        </div>
+        {% endfor %}
+    </div>
+    
+    
+</body>
+</html>

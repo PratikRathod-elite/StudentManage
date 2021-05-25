@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+</head>
+<body>
+    <style>
+        body{
+            text-align: center;
+            background-color:rgb(13, 13, 26);
+        }
+        h1{
+            color:lavender;
+        }
+        form{
+            background:linear-gradient(45deg,rgba(19, 79, 247, 0.795),rgba(105, 67, 245, 0.87),rgb(189, 90, 235),rgb(105, 208, 248));
+            max-width: 20%;
+            padding:26px;
+            margin: 0 auto;
+        }
+        form input{
+            transform: scale(1.1);
+            border-radius: 15px;
+            padding:7px 12px;
+            border:none;
+            box-shadow: 5px 5px 30px 1px black;
+        }
+    </style>
+    <h1>Add Student</h1>
+    <a href="/"><h2><<-Home</h2></a>
+    <a href="updatestudent"><h2>Update</h2></a>
+    <a href="displaystudent"><h2>Display</h2></a>
+
+    <form acction="addstudent" method="POST">
+        {%csrf_token%}
+        
+        <input type="text" placeholder="Name" name="name"><br><br>
+        <input type="number" placeholder="roll" name="roll"><br><br>
+        <input type="text" placeholder="gender" name="gender"><br><br>
+        <input type="text" placeholder="div" name="div"><br><br>
+        <input type="text" placeholder="year" name="year"><br><br>
+        <input type="text" placeholder="branch" name="branch"><br><br>
+        <input type="date" placeholder="dob" name="dob"><br><br>
+        <input type="number" placeholder="prn" name="prn"><br><br>
+        <input type="email" placeholder="email" name="email"><br><br>
+        <input type="number" placeholder="contact" name="contact"><br><br>
+        <input type="text" placeholder="address" name="address"><br><br>
+        
+        <input type="Submit"><br>
+    </form>
+    
+</body>
+</html>
