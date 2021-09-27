@@ -1,0 +1,212 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: barlow condensed,sans-serif;
+    background-color: #fff;
+    
+}
+body::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(-45deg, #36a1d4,#4481eb,#36a1d4,#4481eb);
+    clip-path: polygon(86% 0, 100% 0, 100% 100%, 60% 100%);
+    z-index: -1;  
+}
+nav{
+    background: linear-gradient(-45deg, #36a1d4,#4481eb,#36a1d4,#4481eb);
+    height: 80px;
+    
+}
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 40px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    padding: 0 25px;
+}
+nav ul li a{
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+a:hover{
+    border-bottom:3px solid white;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+h2{
+    margin-top: 10px;
+    margin-left: 45px;
+    color: gray;
+}
+.add-name{
+    font-weight: bold;
+    height: 30px;
+    width: 93%;
+    margin: 9px 0;
+    position: relative;
+  }
+  .add-name input{
+    position: absolute;
+    height: 80%;
+    width: 20%;
+    font-size: 16px;
+    padding-left: 14px;
+    margin-left: 190px;
+  }
+  .all{
+      margin-left: 45px;
+      max-width: 85%;
+      z-index:10;
+  }
+  hr{
+      width: 60%;
+  }
+  #submit{
+    margin-top: 2px;
+    margin-left: 130px;
+    background: linear-gradient(-45deg, #36a1d4,#4481eb,#36a1d4,#4481eb);
+    width: 100px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase; 
+  }
+  @media (max-width: 1097px){
+    label.logo{
+        font-size: 20px;
+        padding-left: 10px;
+    }
+   nav ul li a{
+       font-size: 15px;
+       color: black
+   }
+}
+@media (max-width: 1097px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 150%;
+        height: 150vh;
+        background: white;
+        top: 80px;
+        left: -150%;
+        transition: all .5s;
+        z-index: 1000;
+    }
+    
+    nav ul li{
+        display: block;
+       
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover{
+        border-bottom:3px solid  #4481eb;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    
+}
+
+@media (max-width: 952px){
+    .add-name{
+        font-weight: bold;
+        height: 30px;
+        width: 93%;
+        margin: 9px 0;
+        position: relative;
+      }
+      .add-name input{
+        position: absolute;
+        height: 80%;
+        width: 50%;
+        font-size: 16px;
+        padding-left: 4px;
+        margin-left: 90px;
+        z-index: 100;
+      }
+      .all{
+        margin-left: 20px;
+    }
+    hr{
+        width: 70%;
+    }
+    #submit{
+        margin-top: 15px;
+        margin-left: 70px;
+        background: linear-gradient(-45deg, #36a1d4,#4481eb,#36a1d4,#4481eb);
+        width: 100px;
+        height: 40px;
+        color: white;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase; 
+      }
+      body::before{
+        content: '';
+        position: absolute;
+        height: 130%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background: linear-gradient(-45deg, #36a1d4,#4481eb,#36a1d4,#4481eb);
+        clip-path: polygon(86% 0, 100% 0, 100% 100%, 60% 100%);
+        position: fixed;
+        z-index: -1;
+    }
+
+
+}
+@media (max-width: 380px){
+    body::before{
+        content: '';
+        position: absolute;
+        height: 120%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background: linear-gradient(-45deg, #36a1d4,#4481eb,#36a1d4,#4481eb);
+        clip-path: polygon(88% 0, 100% 0, 100% 100%, 75% 100%);
+        z-index: -1;  
+    }
+}

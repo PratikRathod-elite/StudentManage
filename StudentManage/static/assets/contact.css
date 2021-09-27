@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+.navbar{
+  background: linear-gradient(-45deg, #36a1d4,#4481eb,#36a1d4,#4481eb);
+}
+header{
+    background: linear-gradient(-45deg, #36a1d4,#4481eb,#36a1d4,#4481eb);
+    height: 70px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+.logo{
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    float: left;
+    max-width:30%;
+    padding:14px;
+}
+#right-nav{
+    float: right;
+    font-weight: bold;
+    font-size: 20px;
+    max-width:70%;
+}
+#right-nav li{
+    float: left;
+    display: inline-block;
+    padding:20px;
+}
+#right-nav li a{
+    text-decoration: none;
+    color:white;
+    margin: 10px;
+}
+#right-nav li a:hover{
+    border-bottom:3px solid white;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: aliceblue;
+  position: relative;
+}
+body::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: #36a1d4;
+  clip-path: polygon(86% 0, 100% 0, 100% 100%, 60% 100%);
+  z-index: -1;
+}
+.container{
+  z-index: 1;
+  max-width: 1050px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  margin: 0 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.container .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 20px;
+  z-index:100;
+}
+.content .image-box{
+  max-width: 55%;
+}
+.content .image-box img{
+  width: 100%;
+}
+.content .topic{
+  font-size: 22px;
+  font-weight: 500;
+  color: #36a1d4;
+}
+.content form{
+  width: 40%;
+  margin-right: 30px;
+}
+.content .input-box{
+  height: 50px;
+  width: 100%;
+  margin: 16px 0;
+  position: relative;
+}
+.content .input-box input{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  padding-left: 16px;
+  background: aliceblue;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.content .input-box input:focus,
+.content .input-box input:valid{
+  border-color: #36a1d4;
+  background-color: #fff;
+}
+.content .input-box label{
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  color: #636c72;
+  font-size: 15px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.content .input-box input:focus ~ label,
+.content .input-box input:valid ~ label{
+  top: 0;
+  left: 12px;
+  display: 14px;
+  color: #36a1d4;
+  background: #fff;
+}
+.content .message-box{
+  min-height: 100px;
+  position: relative;
+}
+.content .message-box textarea{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  resize: none;
+  background: aliceblue;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  outline: none;
+  padding:10px;
+ 
+}
+.content .message-box textarea:focus{
+  border-color: #36a1d4;
+  background-color: #fff;
+}
+.content .message-box label{
+  position: absolute;
+  font-size: 16px;
+  color: #636c72;
+  left: 18px;
+  top: 6px;
+ 
+  transition: all 0.3s ease;
+}
+.content .message-box textarea:focus ~ label{
+  left: 12px;
+  top: -10px;
+  color: #36a1d4;
+  font-size: 14px;
+  background: #fff;
+}
+.content .input-box input[type="submit"]{
+  color: #fff;
+  background: #36a1d4;
+  padding-left: 0;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.content .input-box input[type="submit"]:hover{
+  background-color: #2b9ace;
+}
+@media (max-width:1000px) {
+  .content .image-box{
+    max-width: 70%;
+  }
+  .content{
+    padding: 10px 0;
+  }
+}
+@media (max-width:600px) {
+  .content .image-box{
+    display: none;
+  }
+  .content form{
+    width: 100%;
+    margin-left: 30px;
+  }
+  .container{
+    margin-top: 40px;
+  } 
+  header .logo{
+    max-width: 100%;
+    font-size: 22px;
+  }
+  header{
+    height:120px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  header #right-nav{
+    max-width: 100%;
+    margin: -10px auto;
+    float:none;
+    padding: 10px;
+    font-size: 18px;
+  }
+  header #right-nav li{
+    padding: 10px;
+  }
+  .container{
+    max-width: 80%;
+  }
+}
+
+
+@media (max-width:360px){
+  header .logo{
+    font-size: 20px;
+  }
+  header #right-nav li{
+    padding: 5px;
+    font-size: 15px;
+  }
+}
